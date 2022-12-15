@@ -1,12 +1,13 @@
 "use strict";
 const express = require("express");
 const app = express();
-
-
-app.set("views" , "./views");
+//라우팅
+const home = require("./src/routes/home");
+//앱세팅
+app.set("views" , "./src/views");
 app.set("view engine" , "ejs");
 
-const home = require("./routes/home");
+
 app.use("/",home);
 
 module.exports = app;
